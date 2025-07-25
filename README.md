@@ -1,4 +1,10 @@
+
+## 📸 Screenshot
+
+![Screenshot of the app](Screenshot%202025-07-25%20at%2020.14.18.png)
 # 🐙 FBI Wanted - Local Setup (No Docker)
+## Mkae sure you have redis running on 
+ **at  '127.0.0.1', on port 6379 **
 
 This guide explains how to run the **frontend (Vite + React)** and **backend (NestJS)** locally without using Docker.
 
@@ -39,13 +45,14 @@ This guide walks you through running both the **frontend** and **backend** using
 ---
 
 ## 📁 Folder Structure (Expected)
-
+``` bash
 fbi-wanted/
 ├── docker-compose.yml
 ├── fbi-wanted-api/ ← NestJS Backend
 │ └── Dockerfile
 ├── fbi-wanted-frontend/ ← Vite + React Frontend
 │ └── Dockerfile
+```
 
 
 ---
