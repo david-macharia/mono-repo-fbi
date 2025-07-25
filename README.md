@@ -3,7 +3,12 @@
 
 ![Screenshot of the app](Screenshot%202025-07-25%20at%2020.14.18.png)
 # 🐙 FBI Wanted - Local Setup (No Docker)
-## Mkae sure you have redis running on 
+clone and 
+```bash 
+cd mono-repo-fbi 
+```
+
+## Make sure you have redis running on 
  **at  '127.0.0.1', on port 6379 **
 
 This guide explains how to run the **frontend (Vite + React)** and **backend (NestJS)** locally without using Docker.
@@ -19,7 +24,7 @@ node -v
 ```
 🔧 Backend (NestJS + Prisma + SQLite)
 ```bash
-cd fbi-wanted/fbi-wanted-api
+cd fbi-wanted-api
 npm install -g @nestjs/cli
 npm install
 npx prisma generate
