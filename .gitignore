@@ -1,0 +1,28 @@
+# Root-level ignores
+.DS_Store
+.env
+.env.* 
+.vscode/
+.idea/
+
+# Ignore node_modules and dist folders in both subprojects
+fbi-wanted-api/node_modules/
+fbi-wanted-api/dist/
+fbi-wanted-api/.env*
+
+fbi-wanted-frontend/node_modules/
+fbi-wanted-frontend/dist/
+fbi-wanted-frontend/.env*
+
+# Log files
+*.log
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Prisma local database
+fbi-wanted-api/prisma/dev.db
+
+# Docker
+**/docker-compose.override.yml
+**/.docker

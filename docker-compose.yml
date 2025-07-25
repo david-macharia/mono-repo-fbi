@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: fbi-wanted-api
+    build:
+      context: ./fbi-wanted-api
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./fbi-wanted-api:/app:cached
+      - backend_node_modules:/app/node_modules
+    depends_on:
+      - redis
+    stdin_open: true
+    tty: true
+
+  frontend:
+    container_name: fbi-wanted-frontend
+    platform: linux/amd64 # or linux/arm64 for M1/M2
+    build:
+      context: ./fbi-wanted-frontend
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./fbi-wanted-frontend:/app:cached
+      - frontend_node_modules:/app/node_modules
+    stdin_open: true
+    tty: true
+
+  redis:
+    image: redis:7
+    container_name: fbi-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  backend_node_modules:
+  frontend_node_modules:
