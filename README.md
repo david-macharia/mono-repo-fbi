@@ -31,7 +31,7 @@ cd fbi-wanted-frontend
 npm install
 npm run start:dev
 App will run at: http://localhost:5173
-
+```
 # 🐳 FBI Wanted - Monorepo Docker Setup
 
 This guide walks you through running both the **frontend** and **backend** using Docker and Docker Compose.
