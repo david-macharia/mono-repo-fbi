@@ -14,3 +14,4 @@ RUN yarn build
 EXPOSE 5173
 
 CMD ["yarn", "build"]
+CMD ["yarn", "preview", "--port", "5173", "--host", "0.0.0.0"]
