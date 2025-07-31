@@ -1,11 +1,11 @@
-FROM node:20
+FROM node:20-bullseye
 
 WORKDIR /app
 
 COPY package.json ./
 
 # Use a writable cache directory to avoid EROFS errors
-RUN yarn install --ignore-optional --cache-folder yarn-cache
+RUN yarn install  --cache-folder yarn-cache
 
 COPY . .
 
