@@ -8,8 +8,7 @@ services:
     build:
       context: ./fbi-wanted-api
       dockerfile: Dockerfile
-    ports:
-      - '3000:3000'
+    network_mode: "host"  # 👈 Use host network
     volumes:
       - backend_node_modules:/app/node_modules
     depends_on:
@@ -19,12 +18,11 @@ services:
 
   frontend:
     container_name: fbi-wanted-frontend
-    platform: linux/amd64 # or linux/arm64 for M1/M2
+    platform: linux/amd64
     build:
       context: ./fbi-wanted-frontend
       dockerfile: Dockerfile
-    ports:
-      - '5173:5173'
+    network_mode: "host"  # 👈 Use host network
     volumes:
       - ./fbi-wanted-frontend:/app:cached
       - frontend_node_modules:/app/node_modules
@@ -34,8 +32,8 @@ services:
   redis:
     image: redis:7
     container_name: fbi-redis
-    ports:
-      - "6379:6379"
+    network_mode: "host"  # 👈 Use host network
+    command: ["redis-server", "--bind", "0.0.0.0"]
 
 volumes:
   backend_node_modules:
