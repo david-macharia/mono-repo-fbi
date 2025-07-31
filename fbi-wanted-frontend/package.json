@@ -43,6 +43,5 @@
 "overrides": {
      "vite": {
        "rollup": "npm:@rollup/wasm-node"
-     },
-  "proxy": "http://localhost:3000"
+     }
 }}
