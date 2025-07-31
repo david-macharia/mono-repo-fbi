@@ -9,7 +9,6 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./fbi-wanted-api:/app:cached
       - backend_node_modules:/app/node_modules
     depends_on:
       - redis
